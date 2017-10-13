@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box{
+            width:400px;
+            margin:100px auto;
+        }
+        ul{
+            list-style:none;
+        }
+        textarea{
+            width:400px;
+            height:130px;
+        }
+        button{
+            width:80px;
+            height:35px;
+            float:right;
+        }
+        h1{
+            clear:both;
+        }
+        li{
+            margin-bottom: 30px;
+
+        }
+        span{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="comment">
+        <textarea></textarea>
+        <button>发送</button>
+    </div>
+    <h1></h1>
+    <div class="content">
+        <ul id="ul">
+        </ul>
+    </div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.10.0/jquery.min.js"></script>
+<script>
+    $(function(){
+        $('button').on('click',function(){
+            var text = $('textarea').val();
+            var str = '';
+            str += '<li>';
+            str += text;
+            str += '<span>删除</span>';
+            str += '</li>';
+            var date = new Date();
+            $('ul').prepend(str);
+            $('ul').insertBefore($('str'));
+            $('textarea').val('');
+        });
+        $('ul').on('click','li',function(){
+            $(this).remove();
+        })
+    })
+</script>
+</html>
